@@ -71,7 +71,17 @@ input, select, textarea {
 	-ms-appearance: none;
 	appearance: none;
 }
+svg path{
+	stroke: #000000;
+	fill:#fff;
+	stroke-dasharray: 1800;
+	opacity: 10;
+	animation:svganimate 5s cubic-bezier(0, 0.23,1, .1) ;
 
+  }
+img {
+	width:0%;
+}
 /* Basic */
 
 	@-ms-viewport {
@@ -131,6 +141,22 @@ input, select, textarea {
 			body, input, select, textarea {
 				font-size: 11pt;
 				letter-spacing: 0.0375em;
+				
+			}
+			svg{
+				width: 0;
+				height: 0;
+			}
+			svg path{
+				fill:#ffffff00; 
+				 stroke:#ffffff00; 
+				
+			}
+			img {
+				width:60%;
+				width:60%;
+				display: block;
+				margin: auto;
 			}
 
 		}
@@ -3998,17 +4024,29 @@ input, select, textarea {
 		background-color: #1d242a;
 	}
 
-	svg path{
-		stroke: #000000;
-		fill:#fff;
-		stroke-dasharray: 1800;
-		opacity: 10;
-		animation:svganimate 3s cubic-bezier(0, 0.23,1, .1) ;
-		
-	  }
-
-	  div.wrapper{
+	div.wrapper{
 		text-align:center;
 		padding: 0;
 		margin:0 ;
+	}
+
+	@keyframes svganimate {
+		0% {
+			opacity:0 ;
+			fill:none;
+			stroke-dashoffset:1800 ;
+		}
+		30% {
+			opacity:10 ;
+			fill:none;
+			stroke-dashoffset:1800 ;
+		}
+		90% {
+		  fill:rgba(255, 255, 255, 0);
+		}
+		100% {
+			opacity:10 ;
+			fill:rgba(255, 255, 255, 1);
+			stroke-dashoffset:0 ;
+		}
 	  }
